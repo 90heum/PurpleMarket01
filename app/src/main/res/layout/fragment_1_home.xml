@@ -4,7 +4,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
     <com.google.android.material.tabs.TabLayout
+        android:layout_below="@+id/toolbar"
         android:id="@+id/layout_tab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>

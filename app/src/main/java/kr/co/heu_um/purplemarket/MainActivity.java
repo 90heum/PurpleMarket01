@@ -1,31 +1,56 @@
 package kr.co.heu_um.purplemarket;
 
 import android.os.Bundle;
+import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bnv;
     Fragment[] fragments= new Fragment[5];
     FragmentManager fragmentManager;
+    TextView tv;
+
+
+    //toolbar 메뉴
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.topmenu_01,menu);
+        getMenuInflater().inflate(R.menu.topmenu_02,menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        tv=findViewById(R.id.tv);
+        Toolbar toolbar=findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+
+       getSupportActionBar().setDisplayShowTitleEnabled(false);
+
+
+
         fragmentManager=getSupportFragmentManager();
 
         //Home 기본화면설정
         FragmentTransaction tran=fragmentManager.beginTransaction();
         fragments[0]=new Tab01_HomeFragment();
+        tv.setText("PurpleMarket");
         tran.add(R.id.container,fragments[0]);
         tran.commit();
 
@@ -45,6 +70,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
 
                     case  R.id.bnv_home:
+                        tv.setText("PurpleMarket");
                         tran.show(fragments[0]);
                         break;
 
@@ -53,6 +79,7 @@ public class MainActivity extends AppCompatActivity {
                             fragments[1]= new Tab02_RecommendationFragment();
                             tran.add(R.id.container,fragments[1]);
                         }
+                        tv.setText("추천");
                         tran.show(fragments[1]);
                         break;
 
@@ -61,6 +88,7 @@ public class MainActivity extends AppCompatActivity {
                             fragments[2]= new Tab03_CategoryFragment();
                             tran.add(R.id.container,fragments[2]);
                         }
+                        tv.setText("카테고리");
                         tran.show(fragments[2]);
                         break;
 
@@ -69,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                             fragments[3]= new Tab04_SearchFragment();
                             tran.add(R.id.container,fragments[3]);
                         }
+                        tv.setText("검색");
                         tran.show(fragments[3]);
                         break;
 
@@ -77,6 +106,7 @@ public class MainActivity extends AppCompatActivity {
                             fragments[4]= new Tab05_MypurpleFragment();
                             tran.add(R.id.container,fragments[4]);
                         }
+                        tv.setText("마이퍼플");
                         tran.show(fragments[4]);
                         break;
 

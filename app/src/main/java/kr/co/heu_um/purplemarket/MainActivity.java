@@ -1,9 +1,11 @@
 package kr.co.heu_um.purplemarket;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,7 +24,8 @@ public class MainActivity extends AppCompatActivity {
     TextView tv;
 
 
-    //toolbar 메뉴
+
+    //toolbar 메뉴 넣기
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.topmenu_01,menu);
@@ -30,6 +33,22 @@ public class MainActivity extends AppCompatActivity {
         return super.onCreateOptionsMenu(menu);
     }
 
+    //toolbar 메뉴 동작
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        int id = item.getItemId();
+
+        if(id==R.id.menu_setting){
+            Intent intent=new Intent(this,Map_Activity.class);
+            startActivity(intent);
+        }
+        if(id==R.id.menu_setting2){
+            Intent intent=new Intent(this,Catch_Activity.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

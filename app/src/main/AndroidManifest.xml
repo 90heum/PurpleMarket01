@@ -2,6 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="kr.co.heu_um.purplemarket">
 
+
+    <!--2. 위치정보, 외부저장소에 대한 퍼미션- 동적퍼미션 필요.. Java에서 퍼미션 작업-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
+
+    <!--3. OpenGL 그래픽 라이브러리-->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -9,6 +20,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PurpleMarket">
+
+
+
         <activity android:name=".Catch_Activity"></activity>
         <activity android:name=".Map_Activity" />
         <activity
@@ -20,6 +34,23 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!--0. play-services-maps Livrary 를 먼저 설치[build.gradle]-->
+        <!--1. google SDK버전번호 명시-->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <!-- 4. HTTP에 대한 설정-->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <!-- Google API KEY 등록-->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDzMbufdfoyxI_diz-Wb5qGPbF9zkVsP5o" />
+
     </application>
 
 </manifest>

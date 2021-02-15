@@ -24,6 +24,7 @@
             android:layout_gravity="center"
             />
 
+
     </androidx.appcompat.widget.Toolbar>
 
     <!--1. 프레그먼트 영역-->

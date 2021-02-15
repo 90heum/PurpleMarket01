@@ -19,9 +19,10 @@ import com.google.android.gms.maps.SupportMapFragment;
 import com.google.android.gms.maps.UiSettings;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
+import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Map_Activity extends AppCompatActivity {
+public class Map_Activity extends AppCompatActivity implements GoogleMap.OnMarkerClickListener {
 
     GoogleMap gMap;
 
@@ -29,8 +30,7 @@ public class Map_Activity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        Log.d("tag","1111");
-        getSupportActionBar().setTitle("주소검색");
+       // getSupportActionBar().setTitle("주소검색");
 
 
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -51,9 +51,11 @@ public class Map_Activity extends AppCompatActivity {
                 marker.snippet("왕십리역에 있는 미래능력개발교육원");
                 marker.position(seoul);
 
-                marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.common_full_open_on_phone)); //아이콘이미지는 벡터이미지는 안됨!,반드시 .jpg or .png같은 픽셀이미지여야만함
+                marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.location)); //아이콘이미지는 벡터이미지는 안됨!,반드시 .jpg or .png같은 픽셀이미지여야만함
                 marker.anchor(0.5f, 1.0f);                                       //아이콘사이즈는 첨부터작게만들어야됨 원본사이즈그대로나오니깐!
-                gMap.addMarker(marker);
+
+              
+
 
                 //지도의 대표적인 설정들
                 UiSettings settings = gMap.getUiSettings();
@@ -72,8 +74,11 @@ public class Map_Activity extends AppCompatActivity {
 
                 gMap.setMyLocationEnabled(true);
 
+
+
                 //나머지 관련 내용을 개발자사이트의 가이드를 참고해서 시도해보세요
             }
+
 
         });
 
@@ -109,5 +114,14 @@ public class Map_Activity extends AppCompatActivity {
 
         }
 
+    }
+
+    @Override
+    public boolean onMarkerClick(Marker marker) {
+
+
+
+        Toast.makeText(this, "표시되었습니다", Toast.LENGTH_SHORT).show();
+        return true;
     }
 }

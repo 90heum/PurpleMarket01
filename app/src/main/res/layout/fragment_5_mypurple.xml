@@ -40,7 +40,7 @@
             android:text="Nickname"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/purple_500"
+            android:textColor="@color/black"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/ivProfile"/>
 
@@ -50,12 +50,12 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
         android:text="로그인/회원가입"
-        android:layout_width="350dp"
-        android:layout_height="wrap_content"/>
+        android:layout_width="300dp"
+        android:layout_height="55dp"/>
     <ImageButton
         android:id="@+id/kakaoBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="300dp"
+        android:layout_height="55dp"
         android:layout_below="@+id/logBtn"
         android:layout_centerHorizontal="true"
         android:backgroundTint="#00ffffff"

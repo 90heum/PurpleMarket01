@@ -4,16 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
     tools:context=".login_Activity">
 
     <EditText
-        android:layout_width="350dp"
+        android:layout_marginTop="32dp"
+        android:id="@+id/et_id"
+        android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:textSize="24sp"
-        android:padding="16dp"
+        android:layout_alignParentLeft="true"
+        android:textSize="16sp"
+        android:padding="8dp"
         android:background="@drawable/login_bg"
         android:hint="아이디를 입력하세요"
+        />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/et_id"
+        android:layout_alignBaseline="@+id/et_id"
+        android:layout_marginLeft="8dp"
+        android:text="중복확인"/>
+    <EditText
+        android:id="@+id/et_pw"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/et_id"
+        android:layout_marginTop="8dp"
+        android:layout_alignParentLeft="true"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="@drawable/login_bg"
+        android:hint="비밀번호를 입력하세요"
         />
 
 </RelativeLayout>

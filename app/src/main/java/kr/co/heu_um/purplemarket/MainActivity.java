@@ -2,6 +2,7 @@ package kr.co.heu_um.purplemarket;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -16,6 +17,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.kakao.sdk.common.util.Utility;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bnv;
@@ -54,6 +56,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //hash key 찍어보기
+        String keyHash= Utility.INSTANCE.getKeyHash(this);
+        Log.i("keyHash",keyHash);
+
 
         tv=findViewById(R.id.tv);
         Toolbar toolbar=findViewById(R.id.toolbar);

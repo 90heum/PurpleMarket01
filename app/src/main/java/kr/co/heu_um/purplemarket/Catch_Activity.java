@@ -11,6 +11,5 @@ public class Catch_Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_catch_);
 
-        getSupportActionBar().setTitle("장바구니");
     }
 }

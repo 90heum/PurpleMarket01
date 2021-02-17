@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "416158999617",
+    "project_id": "purplemarket-90heum",
+    "storage_bucket": "purplemarket-90heum.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:416158999617:android:e345d02ffea5b76ca652c0",
+        "android_client_info": {
+          "package_name": "kr.co.heu_um.purplemarket"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "416158999617-sets939559s7d0jmtogfvbuaiko0p67i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.co.heu_um.purplemarket",
+            "certificate_hash": "773ade5bf1f7dfd26d6ccf3e69e72fd0415e8854"
+          }
+        },
+        {
+          "client_id": "416158999617-adb7fvdgf6aqc2nigal5e2bq6evk9hh2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLdLlGXITcpYCOrO73F6CGJnWWNvT9UNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "416158999617-adb7fvdgf6aqc2nigal5e2bq6evk9hh2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

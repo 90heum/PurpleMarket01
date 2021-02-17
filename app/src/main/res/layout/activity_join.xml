@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".joinActivity">
+
+    <TextView
+        android:id="@+id/tvJoin01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MyPurple회원가입"
+        android:textSize="16dp"
+        android:textColor="@color/purple_500"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:padding="16dp"
+        android:layout_marginTop="16dp"/>
+    <EditText
+        android:layout_below="@+id/tvJoin01"
+        android:id="@+id/etJoinId"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="@drawable/login_bg"
+        android:hint="아이디를 입력하세요"
+        />
+    <Button
+        android:id="@+id/etJoinId_Btn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="중복확인"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etJoinId"/>
+    <EditText
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/etJoinId_Btn"
+        android:id="@+id/etJoinPw"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="@drawable/login_bg"
+        android:hint="비밀번호를 입력하세요"
+        />
+    <EditText
+        android:layout_marginTop="4dp"
+        android:layout_below="@+id/etJoinPw"
+        android:id="@+id/etJoinPw2"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="@drawable/login_bg"
+        android:hint="비밀번호를 한번더입력하세요"
+        />
+    <Button
+        android:id="@+id/etJoinPw_Btn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 확인"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etJoinPw2"/>
+
+    <EditText
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/etJoinPw_Btn"
+        android:id="@+id/etNickName"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="@drawable/login_bg"
+        android:hint="닉네임을 입력하세요"
+        />
+    <EditText
+        android:layout_marginTop="8dp"
+        android:layout_below="@+id/etNickName"
+        android:id="@+id/etMail"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:textSize="16sp"
+        android:padding="8dp"
+        android:background="@drawable/login_bg"
+        android:hint="Email을 입력하세요"
+        />
+    <Button
+        android:onClick="joinBtn"
+        android:layout_marginTop="16dp"
+        android:id="@+id/join_Btn"
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:text="회원가입"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/etMail"/>
+
+
+</RelativeLayout>

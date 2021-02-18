@@ -5,26 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
+
     android:orientation="vertical"
     tools:context=".Edit01Activity">
 
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PurpleMarket 상품등록"
+        android:textColor="@color/purple_500"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:padding="24dp"/>
+
+
+    <TextView
+        android:layout_marginBottom="8dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textColor="@color/purple_500"
+        android:textSize="12sp"
+        android:text="상품이름"/>
     <EditText
+        android:padding="4dp"
         android:id="@+id/p_name01"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:hint="상품이름 입력"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:hint="입력"
         android:background="@drawable/login_bg"/>
-    <EditText
-        android:id="@+id/p_price01"
+
+    <TextView
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/purple_500"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="상품가격"
+        android:textStyle="bold"
+        android:textSize="12sp"
+        android:text="상품가격"/>
+    <EditText
+        android:padding="4dp"
+        android:id="@+id/p_price01"
+        android:layout_width="150dp"
+        android:layout_height="30dp"
+        android:hint="입력"
         android:background="@drawable/login_bg"/>
     <Button
+        android:layout_marginTop="16dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="select image"
-        android:layout_gravity="right"
+        android:layout_gravity="left"
         android:onClick="clickSelectImage"/>
     <ImageView
         android:id="@+id/p_iv01"
@@ -35,7 +69,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="complete"
+        android:text="게시하기"
         android:onClick="clickComplete"/>
 
 

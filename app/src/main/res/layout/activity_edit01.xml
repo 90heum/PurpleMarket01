@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    android:orientation="vertical"
+    tools:context=".Edit01Activity">
+
+    <EditText
+        android:id="@+id/p_name01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="상품이름 입력"
+        android:background="@drawable/login_bg"/>
+    <EditText
+        android:id="@+id/p_price01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="상품가격"
+        android:background="@drawable/login_bg"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="select image"
+        android:layout_gravity="right"
+        android:onClick="clickSelectImage"/>
+    <ImageView
+        android:id="@+id/p_iv01"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:src="@mipmap/ic_launcher"
+        android:background="@drawable/ic_launcher_background"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="complete"
+        android:onClick="clickComplete"/>
+
+
+
+</LinearLayout>

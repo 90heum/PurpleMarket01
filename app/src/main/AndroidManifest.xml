@@ -5,25 +5,23 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- 3. OpenGL 그래픽 라이브러리 -->
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 3. OpenGL 그래픽 라이브러리 -->
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
 
     <application
         android:name=".MyApplication"
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.PurpleMarket"
-        android:requestLegacyExternalStorage="true"
-        >
-        <activity android:name=".Edit01Activity"></activity>
+        android:usesCleartextTraffic="true">
+        <activity android:name=".Edit02Activity"></activity>
+        <activity android:name=".Edit01Activity" />
         <activity android:name=".joinActivity" />
         <activity android:name=".login_Activity" />
         <activity android:name=".Catch_Activity" />

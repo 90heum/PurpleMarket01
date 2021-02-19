@@ -11,6 +11,11 @@
         android:onClick="clickChuCheon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="추천아이템 추가하기"/>
+        android:text="내상품 올리기"/>
+    <Button
+        android:onClick="clickBanner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="내광고배너 올리기"/>
 
 </LinearLayout>

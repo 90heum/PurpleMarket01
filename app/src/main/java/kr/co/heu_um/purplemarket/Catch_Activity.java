@@ -19,4 +19,11 @@ public class Catch_Activity extends AppCompatActivity {
         Intent intent= new Intent(this,Edit01Activity.class);
         startActivity(intent);
     }
+
+    public void clickBanner(View view) {
+        Intent intent= new Intent(this,Edit02Activity.class);
+        startActivity(intent);
+
+
+    }
 }

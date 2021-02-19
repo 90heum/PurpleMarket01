@@ -48,8 +48,6 @@ public class Hp01_purplerecommendation extends Fragment {
         items.add(new Home_Recycler01_item(R.drawable.kurlymarket,"미역","22500"));*/
 
 
-
-
     }
 
     @Override

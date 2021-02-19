@@ -26,7 +26,7 @@ public interface RetrofitService {
     Call<String> postDataToServer(@PartMap Map<String, String> dataPart, @Part MultipartBody.Part filePart);
 
     //서버에서 데이터를 json으로 파싱하여 가조은 추상메소드
-    @GET("/PurpleMarket/loadDB")
+    @GET("/PurpleMarket/loadDB.php")
     Call<ArrayList<Home_Recycler01_item>> loadDataFromServer();
 
     @PUT("/PurpleMarket/{fileName}")

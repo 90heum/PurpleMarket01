@@ -11,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.ArrayList;
 
 public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
@@ -38,11 +40,16 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
         VH vh=(VH)holder;
-
          Home_Recycler01_item item=items.get(position);
-         vh.ivImg.setImageResource(Integer.parseInt(String.valueOf(item.imgUrl)));
-         vh.tvTitle.setText(item.title);
-         vh.tvPrice.setText(item.price);
+
+        //이미지 설정[DB]에는 이미지경로가 "./uploads/IMG_20210240_moana01.jpg"임
+        //안드로이드에서는 서버(dothome)의 전체 주소가 필요하기에
+        String imgUrl="http://majeongheum.dothome.co.kr/PurpleMarket/"+item.file;
+        Glide.with(context).load(imgUrl).into(((VH) holder).ivImg);
+
+        //텍스트지정
+         vh.tvTitle.setText(item.name);
+         vh.tvPrice.setText(item.price+"원");
 
 
     }

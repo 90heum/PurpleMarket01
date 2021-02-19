@@ -30,14 +30,14 @@ public class Hp02_best extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        items.add(new Home_Recycler01_item(R.drawable.ic_launcher_background,"김치","11500"));
+      /*  items.add(new Home_Recycler01_item(R.drawable.ic_launcher_background,"김치","11500"));
         items.add(new Home_Recycler01_item(R.drawable.kurlymarket,"양상추","1000"));
         items.add(new Home_Recycler01_item(R.drawable.kurlymarket,"돼지고기","51500"));
         items.add(new Home_Recycler01_item(R.drawable.kurlymarket,"미역","22500"));
         items.add(new Home_Recycler01_item(R.drawable.kurlymarket,"김치","11500"));
         items.add(new Home_Recycler01_item(R.drawable.kurlymarket,"양상추","1000"));
         items.add(new Home_Recycler01_item(R.drawable.kurlymarket,"돼지고기","51500"));
-        items.add(new Home_Recycler01_item(R.drawable.kurlymarket,"미역","22500"));
+        items.add(new Home_Recycler01_item(R.drawable.kurlymarket,"미역","22500"));*/
 
 
 

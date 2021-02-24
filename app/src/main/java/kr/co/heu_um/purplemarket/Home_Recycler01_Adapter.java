@@ -39,7 +39,7 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
 
-        VH vh=(VH)holder;
+         VH vh=(VH)holder;
          Home_Recycler01_item item=items.get(position);
 
         //이미지 설정[DB]에는 이미지경로가 "./uploads/IMG_20210240_moana01.jpg"임
@@ -58,6 +58,7 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
     public int getItemCount() {
         return items.size();
     }
+
 
     class VH extends RecyclerView.ViewHolder{
 

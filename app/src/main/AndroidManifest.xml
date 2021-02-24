@@ -20,6 +20,20 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PurpleMarket"
         android:usesCleartextTraffic="true">
+
+        <!--openning Activity-->
+        <activity android:name=".OpeninngActivity"
+            android:theme="@style/openinng"
+            android:screenOrientation="portrait"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+
         <activity android:name=".Edit02Activity"></activity>
         <activity android:name=".Edit01Activity" />
         <activity android:name=".joinActivity" />
@@ -29,11 +43,7 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/MyTheme">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity> <!-- 0. play-services-maps Livrary 를 먼저 설치[build.gradle] -->
         <!-- 1. google SDK버전번호 명시 -->
         <meta-data

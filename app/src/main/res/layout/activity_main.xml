@@ -17,10 +17,10 @@
             android:id="@+id/tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="PurpleMarket"
+            android:fontFamily="@font/maplestory_lignt"
             android:textStyle="normal"
             android:textColor="@color/white"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:layout_gravity="center"
             />
 
@@ -38,9 +38,11 @@
     <!--2. BNV영역-->
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bnv"
+       android:background="@drawable/bnv_bg"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:theme="@style/bottomNavigation"
         app:menu="@menu/bnv"
         app:itemTextColor="@color/bnv_item"
         app:itemIconTint="@color/bnv_item"

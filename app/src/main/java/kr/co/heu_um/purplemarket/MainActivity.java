@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
         //Home 기본화면설정
         FragmentTransaction tran=fragmentManager.beginTransaction();
         fragments[0]=new Tab01_HomeFragment();
-        tv.setText("PurpleMarket");
+        tv.setText("퍼플마켓");
         tran.add(R.id.container,fragments[0]);
         tran.commit();
 
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
 
                     case  R.id.bnv_home:
-                        tv.setText("PurpleMarket");
+                        tv.setText("퍼플마켓");
                         tran.show(fragments[0]);
                         break;
 

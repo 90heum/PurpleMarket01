@@ -108,7 +108,7 @@ public class Tab02_RecommendationFragment extends Fragment {
                                             } else if (tagName.equals("IM_PRICE")) {
 
                                                 xpp.next();
-                                                item.price = xpp.getText();
+                                                item.price = xpp.getText()+"원";
                                                 isFinish = true;
 
                                             }

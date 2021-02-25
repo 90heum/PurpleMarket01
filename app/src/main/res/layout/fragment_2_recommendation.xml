@@ -5,17 +5,32 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <Button
-        android:id="@+id/R_loadData"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="load data" />
+
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:layout_marginTop="32dp"
+        android:textSize="18sp"
+        android:textColor="@color/purple_500"
+        android:fontFamily="@font/maplestory_bold"
+        android:layout_marginLeft="16dp"
         android:text="우수한등급업체 추천list" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="24dp"
+        android:background="@color/purple_500"/>
+
+    <Button
+        android:id="@+id/R_loadData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/maplestory_bold"
+        android:text="추천업체 보기" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler04"

@@ -5,8 +5,10 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -16,6 +18,7 @@ import com.bumptech.glide.Glide;
 import java.util.ArrayList;
 
 public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
+
 
     Context context;
     ArrayList<Home_Recycler01_item> items;
@@ -52,6 +55,8 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
          vh.tvPrice.setText(item.price+"원");
 
 
+
+
     }
 
     @Override
@@ -68,6 +73,14 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
 
         public VH(@NonNull View itemView) {
             super(itemView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "상세페이지 준비중입니다.", Toast.LENGTH_SHORT).show();
+                }
+            });
+
 
             ivImg=itemView.findViewById(R.id.iv);
             tvTitle=itemView.findViewById(R.id.tv01);

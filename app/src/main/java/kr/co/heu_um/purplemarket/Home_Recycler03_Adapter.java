@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -62,6 +63,12 @@ public class Home_Recycler03_Adapter extends RecyclerView.Adapter {
         public VH(@NonNull View itemView) {
             super(itemView);
 
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "상세페이지 준비중입니다.", Toast.LENGTH_SHORT).show();
+                }
+            });
             ivImg=itemView.findViewById(R.id.iv);
 
 

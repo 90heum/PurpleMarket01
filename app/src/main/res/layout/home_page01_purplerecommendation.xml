@@ -18,11 +18,13 @@
                 android:layout_height="400dp"
                 android:src="@drawable/ic_launcher_background"/>
             <TextView
+                android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="16dp"
                 android:textStyle="bold"
                 android:textSize="18sp"
+                android:fontFamily="@font/maplestory_bold"
                 android:textColor="@color/black"
                 android:text="이런 상품 어때요?"/>
             <androidx.recyclerview.widget.RecyclerView

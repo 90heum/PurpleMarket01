@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -57,6 +58,13 @@ public class Recommendation_Recycler01_Adapter extends RecyclerView.Adapter{
 
         public VH(@NonNull View itemView) {
             super(itemView);
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(context, "상세페이지 준비중입니다.", Toast.LENGTH_SHORT).show();
+                }
+            });
             this.R_title=itemView.findViewById(R.id.tv_title);
             this.R_name=itemView.findViewById(R.id.tv_name);
             this.R_price=itemView.findViewById(R.id.tv_price);

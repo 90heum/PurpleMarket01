@@ -22,7 +22,7 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
-public class Map_Activity extends AppCompatActivity implements GoogleMap.OnMarkerClickListener {
+public class Map_Activity extends AppCompatActivity implements OnMapReadyCallback {
 
     GoogleMap gMap;
 
@@ -38,6 +38,25 @@ public class Map_Activity extends AppCompatActivity implements GoogleMap.OnMarke
         mapFragment.getMapAsync(new OnMapReadyCallback() {
             @Override
             public void onMapReady(GoogleMap googleMap) {
+/*
+                gMap.setOnMapClickListener(new GoogleMap.OnMapClickListener() {
+                    @Override
+                    public void onMapClick(LatLng latLng) {
+                        MarkerOptions mOption= new MarkerOptions();
+                        //마커 타이틀
+                        mOption.title("마커좌표");
+                       Double latitude= latLng.latitude;
+                       Double lonitude= latLng.longitude;
+
+                       mOption.snippet(latitude.toString() + ","+ lonitude.toString());
+
+                       mOption.position(new LatLng(latitude, lonitude));
+
+                       googleMap.addMarker(mOption);
+                    }
+                });*/
+
+
                 //파라미터로 전달된 GoogleMap이 지도 객체임!
                 gMap = googleMap; //멤버변수에 대입하면 이 객체를 다른 메소드에서도 사용가능
 
@@ -53,8 +72,6 @@ public class Map_Activity extends AppCompatActivity implements GoogleMap.OnMarke
 
                 marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.location)); //아이콘이미지는 벡터이미지는 안됨!,반드시 .jpg or .png같은 픽셀이미지여야만함
                 marker.anchor(0.5f, 1.0f);                                       //아이콘사이즈는 첨부터작게만들어야됨 원본사이즈그대로나오니깐!
-
-              
 
 
                 //지도의 대표적인 설정들
@@ -93,35 +110,16 @@ public class Map_Activity extends AppCompatActivity implements GoogleMap.OnMarke
 
     }
 
+
+
+
     @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch (requestCode) {
-            case 0:
-//                if(grantResults[0] ==PackageManager.PERMISSION_GRANTED || grantResults[1] ==PackageManager.PERMISSION_DENIED){
-//                    Toast.makeText(this, "이 앱의 내 위치 사용불가", Toast.LENGTH_SHORT).show();
-//                }
-
-                for (int i = 0; i < grantResults.length; i++) {
-                    if (grantResults[i] == PackageManager.PERMISSION_DENIED) {
-                        Toast.makeText(this, "내 위치 사용불가", Toast.LENGTH_SHORT).show();
-                        break;
-                    }
-                }
-
-                break;
-
-
-        }
+    public void onMapReady(GoogleMap googleMap) {
 
     }
 
     @Override
-    public boolean onMarkerClick(Marker marker) {
+    public void onPointerCaptureChanged(boolean hasCapture) {
 
-
-
-        Toast.makeText(this, "표시되었습니다", Toast.LENGTH_SHORT).show();
-        return true;
     }
 }

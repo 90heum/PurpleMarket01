@@ -1,5 +1,7 @@
 package kr.co.heu_um.purplemarket;
 
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.google.android.youtube.player.YouTubePlayerFragment;
 
 import java.util.ArrayList;
 
@@ -25,6 +28,7 @@ public class Home_Recycler03_Adapter extends RecyclerView.Adapter {
         this.items = items;
     }
 
+
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -32,6 +36,7 @@ public class Home_Recycler03_Adapter extends RecyclerView.Adapter {
         LayoutInflater inflater= LayoutInflater.from(context);
         View itemView=inflater.inflate(R.layout.home_recycler03_item,parent,false);
         VH holder= new VH(itemView);
+
 
         return holder;
     }
@@ -60,6 +65,7 @@ public class Home_Recycler03_Adapter extends RecyclerView.Adapter {
 
         ImageView ivImg;
 
+
         public VH(@NonNull View itemView) {
             super(itemView);
 
@@ -70,6 +76,8 @@ public class Home_Recycler03_Adapter extends RecyclerView.Adapter {
                 }
             });
             ivImg=itemView.findViewById(R.id.iv);
+
+
 
 
         }

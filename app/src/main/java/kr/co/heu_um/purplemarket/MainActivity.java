@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     FragmentManager fragmentManager;
     TextView tv;
 
-
+//올라가나?
 
     //toolbar 메뉴 넣기
     @Override

@@ -13,10 +13,10 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
             <ImageView
-                android:padding="16dp"
+                android:paddingBottom="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:src="@drawable/ic_launcher_background"/>
+                android:layout_height="490dp"
+                android:src="@drawable/mainactivitypng"/>
             <TextView
                 android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"

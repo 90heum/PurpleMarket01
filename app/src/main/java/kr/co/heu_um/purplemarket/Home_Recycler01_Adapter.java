@@ -2,6 +2,7 @@ package kr.co.heu_um.purplemarket;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,6 +55,7 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
         //텍스트지정
          vh.tvTitle.setText(item.name);
          vh.tvPrice.setText(item.price+"원");
+         vh.ivImg.setTag(imgUrl);
 
 
 
@@ -75,18 +77,30 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
 
         public VH(@NonNull View itemView) {
             super(itemView);
+            ivImg=itemView.findViewById(R.id.iv);
+            tvTitle=itemView.findViewById(R.id.tv01);
+            tvPrice=itemView.findViewById(R.id.tv02);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "상세페이지 준비중입니다.", Toast.LENGTH_SHORT).show();
+
+                   String title =tvTitle.getText().toString();
+                   String price =tvPrice.getText().toString();
+                   String img = (String)ivImg.getTag();
+
+                    Intent intent= new Intent(context,Detail_Activity.class);
+
+
+                    intent.putExtra("title",title);
+                    intent.putExtra("price",price);
+                    intent.putExtra("img",img);
+                    context.startActivity(intent);
                 }
             });
 
 
-            ivImg=itemView.findViewById(R.id.iv);
-            tvTitle=itemView.findViewById(R.id.tv01);
-            tvPrice=itemView.findViewById(R.id.tv02);
+
 
         }
     }

@@ -18,7 +18,6 @@ public class Tab01_HomeFragment extends Fragment {
 
     TabLayout tabLayout;
     ViewPager pager;
-
     Hp_PagerAdapter hp_pagerAdapter;
 
     @Nullable

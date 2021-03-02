@@ -72,7 +72,7 @@ public class Map_Activity extends AppCompatActivity implements OnMapReadyCallbac
 
                 marker.icon(BitmapDescriptorFactory.fromResource(R.drawable.location)); //아이콘이미지는 벡터이미지는 안됨!,반드시 .jpg or .png같은 픽셀이미지여야만함
                 marker.anchor(0.5f, 1.0f);                                       //아이콘사이즈는 첨부터작게만들어야됨 원본사이즈그대로나오니깐!
-
+                                                                                                        //location
 
                 //지도의 대표적인 설정들
                 UiSettings settings = gMap.getUiSettings();

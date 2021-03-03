@@ -7,25 +7,78 @@
     android:orientation="vertical"
     tools:context=".Detail_Activity">
 
-    <TextView
-        android:id="@+id/detail_title"
-        android:textSize="32sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="상품이름"
-        />
 
-    <TextView
-        android:id="@+id/detail_price"
-        android:textSize="32sp"
-        android:layout_width="wrap_content"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/detail_toolbar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="상품가격"
-        />
-    <ImageView
-        android:id="@+id/detail_img"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:backgroundTint="#F6F6F6">
+
+        <TextView
+            android:id="@+id/detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="제품 상세"
+            android:textSize="16dp"
+            android:textColor="@color/black"
+            android:layout_gravity="center"
+            android:fontFamily="@font/cookierunregular"
+            android:padding="4dp"
+            />
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <ImageView
+                android:id="@+id/detail_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"/>
+
+            <TextView
+                android:layout_marginLeft="8dp"
+                android:id="@+id/detail_title02"
+                android:fontFamily="@font/cookierunregular"
+                android:textSize="14sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="제품이름"
+                />
+            <TextView
+                android:textColor="@color/black"
+                android:layout_marginLeft="8dp"
+                android:fontFamily="@font/cookierunregular"
+                android:id="@+id/detail_price"
+                android:textSize="24sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="상품가격"
+                />
+
+        </LinearLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/cookierunbold"
+            android:text="장바구니 담기"/>
+
+    </RelativeLayout>
+
+
+
 
 
 </LinearLayout>

@@ -20,8 +20,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PurpleMarket"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Detail_Activity"></activity>
-        <!-- openning Activity -->
+        <activity android:name=".Cart_Activity"></activity>
+        <activity
+            android:name=".Detail_Activity"
+            android:theme="@style/Theme.PurpleMarket" /> <!-- openning Activity -->
         <activity
             android:name=".OpeninngActivity"
             android:screenOrientation="portrait"
@@ -40,7 +42,7 @@
         <activity android:name=".Map_Activity" />
         <activity
             android:name=".MainActivity"
-            android:theme="@style/MyTheme"></activity> <!-- 0. play-services-maps Livrary 를 먼저 설치[build.gradle] -->
+            android:theme="@style/MyTheme" /> <!-- 0. play-services-maps Livrary 를 먼저 설치[build.gradle] -->
         <!-- 1. google SDK버전번호 명시 -->
         <meta-data
             android:name="com.google.android.gms.version"

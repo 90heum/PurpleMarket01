@@ -12,11 +12,11 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical">
+
             <ImageView
-                android:paddingBottom="16dp"
                 android:layout_width="match_parent"
-                android:layout_height="490dp"
-                android:src="@drawable/mainactivitypng"/>
+                android:layout_height="400dp"
+                android:src="@drawable/mainactivitypng2" />
             <TextView
                 android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"

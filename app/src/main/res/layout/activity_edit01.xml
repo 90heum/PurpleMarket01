@@ -29,6 +29,7 @@
         android:textColor="@color/purple_500"
         android:textSize="12sp"
         android:text="상품이름"/>
+
     <EditText
         android:padding="4dp"
         android:id="@+id/p_name01"
@@ -36,6 +37,7 @@
         android:layout_height="30dp"
         android:hint="입력"
         android:background="@drawable/login_bg"/>
+
 
     <TextView
         android:layout_marginBottom="8dp"
@@ -60,6 +62,13 @@
         android:text="select image"
         android:layout_gravity="left"
         android:onClick="clickSelectImage"/>
+    <TextView
+        android:id="@+id/userNickName"
+        android:hint="사용자정보"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bnv_bg"/>
+
     <ImageView
         android:padding="25dp"
         android:id="@+id/p_iv01"

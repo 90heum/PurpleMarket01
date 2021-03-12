@@ -28,9 +28,12 @@ import kotlin.jvm.functions.Function2;
 
 public class Tab05_MypurpleFragment extends Fragment {
 
-    TextView nickName;
-    CircleImageView ivProfile;
+     TextView nickName;
+     CircleImageView ivProfile;
     ImageButton kakaoBtn;
+
+    //다른액티비티로보낼 카카오로그인정보 변수들
+  //  static String loginNickName;
 
     Button logBtn;
     Button logOut;
@@ -77,15 +80,20 @@ public class Tab05_MypurpleFragment extends Fragment {
                                 public Unit invoke(User user, Throwable throwable) {
 
                                     if (user != null) {
-                                        long id= user.getId();// 카카오 회원번호
+                                        String id= String.valueOf(user.getId());// 카카오 회원번호
                                         //필수동의 항목 회원 프로필정보 (닉네임/프사URL)
                                         String nickname= user.getKakaoAccount().getProfile().getNickname();
                                         String profileImage=user.getKakaoAccount().getProfile().getThumbnailImageUrl();
+
 
                                         //선택동의 이메일
                                         String email=user.getKakaoAccount().getEmail();
 
                                         nickName.setText(nickname);
+
+                                        //로그인정보 별도클래스에 모아서 관리!
+                                        G.userVo.name = nickname;
+                                        G.userVo.id=id;
 
                                         Glide.with(Tab05_MypurpleFragment.this).load(profileImage).into(ivProfile);
 

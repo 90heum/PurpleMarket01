@@ -13,6 +13,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -29,11 +30,17 @@ import retrofit2.Callback;
 import retrofit2.Response;
 import retrofit2.Retrofit;
 
+
+
 public class Edit01Activity extends AppCompatActivity {
 
     EditText p_name01, p_price01;
     ImageView p_iv01;
-    String imgPath; //옵로드할 이미지의 절대경로
+    String imgPath; //업로드할 이미지의 절대경로
+
+    //로그인통한 정보들
+    TextView userNickName;
+    String userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +50,12 @@ public class Edit01Activity extends AppCompatActivity {
         p_name01=findViewById(R.id.p_name01);
         p_price01=findViewById(R.id.p_price01);
         p_iv01=findViewById(R.id.p_iv01);
+
+        userNickName=findViewById(R.id.userNickName);
+
+        userNickName.setText(G.userVo.name);
+
+        userId=G.userVo.id;
 
     }
 
@@ -90,6 +103,9 @@ public class Edit01Activity extends AppCompatActivity {
         String name= p_name01.getText().toString();
         String price= p_price01.getText().toString();
 
+        String nickName=userNickName.getText().toString();
+        String id=userId;
+
         //레트로핏작업  5단계
         Retrofit retrofit= RetrofitHelper.getRetrofitInstanceScalars();
         RetrofitService retrofitService=retrofit.create(RetrofitService.class);
@@ -105,6 +121,9 @@ public class Edit01Activity extends AppCompatActivity {
         Map<String, String> dataPart= new HashMap<>();
         dataPart.put("name", name);
         dataPart.put("price", price);
+
+        dataPart.put("nickName",nickName);
+        dataPart.put("id",id);
 
         Call<String> call= retrofitService.postDataToServer(dataPart,filePart);
         call.enqueue(new Callback<String>() {

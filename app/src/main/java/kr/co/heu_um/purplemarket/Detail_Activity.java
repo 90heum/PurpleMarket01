@@ -19,6 +19,8 @@ public class Detail_Activity extends AppCompatActivity {
     TextView detail_title02;
     TextView detail_price;
     ImageView detail_img;
+    TextView detail_userNick;
+   // TextView detail_userId;
 
 
 
@@ -59,17 +61,28 @@ public class Detail_Activity extends AppCompatActivity {
         detail_title=findViewById(R.id.detail_title);
         detail_title02=findViewById(R.id.detail_title02);
         detail_price=findViewById(R.id.detail_price);
+        detail_userNick=findViewById(R.id.detail_userNick);
+
+      //  detail_userId=findViewById(R.id.detail_userId);
+
         detail_img=findViewById(R.id.detail_img);
+
 
         Intent intent= getIntent();
 
         String title= intent.getStringExtra("title");
         String price= intent.getStringExtra("price");
         String img= intent.getStringExtra("img");
+        String nick=intent.getStringExtra("nick");
 
-        detail_title.setText(title);
+        String userId=intent.getStringExtra("userId");
+
+//        detail_title.setText(title);
+        detail_title.setText(G.selectedItem.name);
         detail_title02.setText(title);
         detail_price.setText(price);
+        detail_userNick.setText(nick);
+        //detail_userId.setText(userId);
 
         Glide.with(this).load(img).into(detail_img);
 

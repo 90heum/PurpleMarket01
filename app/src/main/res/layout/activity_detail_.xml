@@ -59,6 +59,16 @@
                 android:layout_height="wrap_content"
                 android:text="상품가격"
                 />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="판매자"
+                android:id="@+id/detail_userNick"/>
+           <!-- <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="id"
+                android:id="@+id/detail_userId"/>-->
 
         </LinearLayout>
 

@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.google.android.youtube.player.YouTubePlayerFragment;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 
@@ -55,9 +56,11 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
         //텍스트지정
          vh.tvTitle.setText(item.name);
          vh.tvPrice.setText(item.price+"원");
+         vh.tvNickName.setText("판매자 : "+item.nickName);
          vh.ivImg.setTag(imgUrl);
 
-
+        //로그인정보아이디 변수에넣기
+        String userId=(item.id);
 
 
     }
@@ -73,6 +76,9 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
         ImageView ivImg;
         TextView tvTitle;
         TextView tvPrice;
+        TextView tvNickName;
+
+
 
 
         public VH(@NonNull View itemView) {
@@ -80,21 +86,38 @@ public class Home_Recycler01_Adapter extends RecyclerView.Adapter {
             ivImg=itemView.findViewById(R.id.iv);
             tvTitle=itemView.findViewById(R.id.tv01);
             tvPrice=itemView.findViewById(R.id.tv02);
+            tvNickName=itemView.findViewById(R.id.tv03);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
 
-                   String title =tvTitle.getText().toString();
-                   String price =tvPrice.getText().toString();
+                    int pos = getAdapterPosition();
+                    Home_Recycler01_item item = items.get(pos);
+                    // 1. 글로벌에 저장
+                    G.selectedItem = items.get(pos);
+                    // 2-1. Data Json으로 변환해서 Intent로 전달
+//                    Gson gson = new Gson();
+//                    String json = gson.toJson(item);
+                    // 2-2. Data의 각자 값을 Intent로 전달
+                    String userId = item.id;
+                   String title =item.name;
+                   String price =item.price;
+                   String nick=item.nickName;
+
+
+
                    String img = (String)ivImg.getTag();
 
                     Intent intent= new Intent(context,Detail_Activity.class);
 
-
+//                    intent.putExtra("data", json);
                     intent.putExtra("title",title);
                     intent.putExtra("price",price);
+                    intent.putExtra("nick",nick);
                     intent.putExtra("img",img);
+                    intent.putExtra("userId",userId);
+
                     context.startActivity(intent);
                 }
             });

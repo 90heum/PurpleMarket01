@@ -20,7 +20,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.PurpleMarket"
         android:usesCleartextTraffic="true">
-        <activity android:name=".Cart_Activity"></activity>
+        <activity android:name=".ChattingActivity"></activity>
+        <activity android:name=".Cart_Activity" />
         <activity
             android:name=".Detail_Activity"
             android:theme="@style/Theme.PurpleMarket" /> <!-- openning Activity -->

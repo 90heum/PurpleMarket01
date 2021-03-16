@@ -44,6 +44,14 @@ public class Detail_Activity extends AppCompatActivity {
             startActivity(intent);
 
         }
+       if(id==R.id.detail_chat){
+
+
+
+           Intent intent= new Intent(this,ChattingActivity.class);
+           startActivity(intent);
+
+       }
 
         return super.onOptionsItemSelected(item);
     }
@@ -86,6 +94,7 @@ public class Detail_Activity extends AppCompatActivity {
 
         Glide.with(this).load(img).into(detail_img);
 
-
     }
+
+
 }

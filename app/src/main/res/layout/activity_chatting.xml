@@ -36,7 +36,7 @@
             android:layout_height="match_parent"
             android:text="send"
             android:layout_marginLeft="8dp"
-            android:backgroundTint="#FFF9900"/>
+            android:backgroundTint="@color/purple_500"/>
 
     </LinearLayout>
 

@@ -16,6 +16,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.bumptech.glide.Glide;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
 import com.kakao.sdk.auth.LoginClient;
 import com.kakao.sdk.auth.model.OAuthToken;
 import com.kakao.sdk.user.UserApiClient;
@@ -28,19 +30,20 @@ import kotlin.jvm.functions.Function2;
 
 public class Tab05_MypurpleFragment extends Fragment {
 
-     TextView nickName;
-     CircleImageView ivProfile;
+    TextView nickName;
+    CircleImageView ivProfile;
     ImageButton kakaoBtn;
 
     //다른액티비티로보낼 카카오로그인정보 변수들
-  //  static String loginNickName;
+    //  static String loginNickName;
 
     Button logBtn;
     Button logOut;
+
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_5_mypurple,container,false);
+        return inflater.inflate(R.layout.fragment_5_mypurple, container, false);
     }
 
     @Override
@@ -49,17 +52,17 @@ public class Tab05_MypurpleFragment extends Fragment {
 
 
         //xml뷰 들에대한 find
-        logBtn=view.findViewById(R.id.logBtn);
+        logBtn = view.findViewById(R.id.logBtn);
 
-        nickName=view.findViewById(R.id.nickName);
-        ivProfile=view.findViewById(R.id.ivProfile);
-        kakaoBtn=view.findViewById(R.id.kakaoBtn);
-        logOut=view.findViewById(R.id.logOut);
+        nickName = view.findViewById(R.id.nickName);
+        ivProfile = view.findViewById(R.id.ivProfile);
+        kakaoBtn = view.findViewById(R.id.kakaoBtn);
+        logOut = view.findViewById(R.id.logOut);
 
         logBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(getContext(),login_Activity.class);
+                Intent intent = new Intent(getContext(), login_Activity.class);
                 startActivity(intent);
             }
         });
@@ -71,7 +74,7 @@ public class Tab05_MypurpleFragment extends Fragment {
                 LoginClient.getInstance().loginWithKakaoAccount(getContext(), new Function2<OAuthToken, Throwable, Unit>() {
                     @Override
                     public Unit invoke(OAuthToken oAuthToken, Throwable throwable) {
-                        if(oAuthToken !=null){//로그인객체정보가 있으면
+                        if (oAuthToken != null) {//로그인객체정보가 있으면
                             Toast.makeText(getActivity(), "로그인 성공", Toast.LENGTH_SHORT).show();
 
                             //로그인 계정 정보 얻기
@@ -80,25 +83,32 @@ public class Tab05_MypurpleFragment extends Fragment {
                                 public Unit invoke(User user, Throwable throwable) {
 
                                     if (user != null) {
-                                        String id= String.valueOf(user.getId());// 카카오 회원번호
+                                        String id = String.valueOf(user.getId());// 카카오 회원번호
                                         //필수동의 항목 회원 프로필정보 (닉네임/프사URL)
-                                        String nickname= user.getKakaoAccount().getProfile().getNickname();
-                                        String profileImage=user.getKakaoAccount().getProfile().getThumbnailImageUrl();
+                                        String nickname = user.getKakaoAccount().getProfile().getNickname();
+                                        String profileImage = user.getKakaoAccount().getProfile().getThumbnailImageUrl();
 
 
                                         //선택동의 이메일
-                                        String email=user.getKakaoAccount().getEmail();
+                                        String email = user.getKakaoAccount().getEmail();
 
                                         nickName.setText(nickname);
 
                                         //로그인정보 별도클래스에 모아서 관리!
                                         G.userVo.name = nickname;
-                                        G.userVo.id=id;
+                                        G.userVo.id = id;
+                                        G.userVo.imgUrl = profileImage;
+                                        FirebaseDatabase.getInstance().getReference("user").child(id).setValue(nickname).addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                Toast.makeText(getContext(), "OK", Toast.LENGTH_SHORT).show();
+                                                Glide.with(Tab05_MypurpleFragment.this).load(profileImage).into(ivProfile);
+                                            }
+                                        });
 
-                                        Glide.with(Tab05_MypurpleFragment.this).load(profileImage).into(ivProfile);
 
-                                    }else{
-                                        Toast.makeText(getContext(), "사용자 정보요청 실패"+throwable.getMessage(), Toast.LENGTH_SHORT).show();
+                                    } else {
+                                        Toast.makeText(getContext(), "사용자 정보요청 실패" + throwable.getMessage(), Toast.LENGTH_SHORT).show();
                                     }
 
 
@@ -122,16 +132,15 @@ public class Tab05_MypurpleFragment extends Fragment {
                     @Override
                     public Unit invoke(Throwable throwable) {
 
-                        if(throwable!=null){
+                        if (throwable != null) {
                             Toast.makeText(getContext(), "로그아웃 실패", Toast.LENGTH_SHORT).show();
-                        }else{
+                        } else {
                             Toast.makeText(getContext(), "로그아웃", Toast.LENGTH_SHORT).show();
 
                             //화면초기화
                             nickName.setText("닉네임");
                             Glide.with(Tab05_MypurpleFragment.this).load(R.mipmap.ic_launcher).into(ivProfile);
                         }
-
 
 
                         return null;

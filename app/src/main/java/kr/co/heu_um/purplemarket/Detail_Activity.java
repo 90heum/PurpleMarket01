@@ -22,8 +22,7 @@ public class Detail_Activity extends AppCompatActivity {
     TextView detail_userNick;
    // TextView detail_userId;
 
-
-
+    String userId;
 
     //toolbar 메뉴 넣기
     @Override
@@ -46,10 +45,14 @@ public class Detail_Activity extends AppCompatActivity {
         }
        if(id==R.id.detail_chat){
 
+           if(userId.equals(G.userVo.id)){
+               Intent intent= new Intent(this,ChattingList.class);
+               startActivity(intent);
+           }else{
+               Intent intent= new Intent(this,ChattingActivity.class);
+               startActivity(intent);
+           }
 
-
-           Intent intent= new Intent(this,ChattingActivity.class);
-           startActivity(intent);
 
        }
 
@@ -83,7 +86,7 @@ public class Detail_Activity extends AppCompatActivity {
         String img= intent.getStringExtra("img");
         String nick=intent.getStringExtra("nick");
 
-        String userId=intent.getStringExtra("userId");
+        userId=intent.getStringExtra("userId");
 
 //        detail_title.setText(title);
         detail_title.setText(G.selectedItem.name);

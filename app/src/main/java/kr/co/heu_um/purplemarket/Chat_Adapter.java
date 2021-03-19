@@ -25,7 +25,7 @@ public class Chat_Adapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        messageItems.size();
+       return messageItems.size();
     }
 
     @Override

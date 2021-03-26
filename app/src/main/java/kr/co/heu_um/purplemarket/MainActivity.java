@@ -81,6 +81,7 @@ public class MainActivity extends AppCompatActivity {
         tran.commit();
 
         bnv=findViewById(R.id.bnv);
+        bnv.setSelectedItemId(R.id.bnv_mypurple);
         bnv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {

@@ -75,9 +75,9 @@ public class MainActivity extends AppCompatActivity {
 
         //Home 기본화면설정
         FragmentTransaction tran=fragmentManager.beginTransaction();
-        fragments[0]=new Tab01_HomeFragment();
-        tv.setText("퍼플마켓");
-        tran.add(R.id.container,fragments[0]);
+        fragments[4]=new Tab05_MypurpleFragment();
+        tv.setText("마이퍼플");
+        tran.add(R.id.container,fragments[4]);
         tran.commit();
 
         bnv=findViewById(R.id.bnv);
@@ -96,6 +96,10 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()){
 
                     case  R.id.bnv_home:
+                        if(fragments[0]==null){
+                            fragments[0]= new Tab01_HomeFragment();
+                            tran.add(R.id.container,fragments[0]);
+                        }
                         tv.setText("퍼플마켓");
                         tran.show(fragments[0]);
                         break;
@@ -137,6 +141,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                 }
+
                 tran.commit();
 
 

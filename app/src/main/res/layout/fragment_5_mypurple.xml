@@ -14,33 +14,28 @@
         android:textStyle="bold"
         android:textColor="@color/purple_500"
         android:textSize="25sp"
+        android:fontFamily="@font/cookierunbold"
         android:layout_marginTop="100dp"
-        android:text="MyPurple"/>
-    <TextView
-        android:id="@+id/tv02"
-        android:textSize="22sp"
-        android:layout_below="@id/tv01"
-        android:textColor="@color/purple_500"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="회원가입 하세요"/>
+        android:text="Purple Login"/>
+
     <de.hdodenhof.circleimageview.CircleImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@mipmap/ic_launcher"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:background="@drawable/profile_image"
         android:layout_centerHorizontal="true"
-        android:layout_below="@id/tv02"
+        android:layout_below="@id/tv01"
         android:layout_marginTop="20dp"
         android:id="@+id/ivProfile"/>
         <TextView
             android:id="@+id/nickName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nickname"
+            android:text="닉네임"
+            android:fontFamily="@font/cookierunregular"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:textColor="@color/black"
+            android:textColor="@color/purple_500"
+            android:layout_marginTop="20dp"
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/ivProfile"/>
 
@@ -49,6 +44,7 @@
         android:layout_below="@id/nickName"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="12dp"
+        android:fontFamily="@font/maplestory_lignt"
         android:text="로그인/회원가입"
         android:layout_width="300dp"
         android:layout_height="55dp"/>
@@ -67,6 +63,7 @@
         android:layout_margin="16dp"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
+        android:fontFamily="@font/maplestory_lignt"
         android:text="Logout"/>
 
 

@@ -139,7 +139,7 @@ public class Tab05_MypurpleFragment extends Fragment {
 
                             //화면초기화
                             nickName.setText("닉네임");
-                            Glide.with(Tab05_MypurpleFragment.this).load(R.mipmap.ic_launcher).into(ivProfile);
+                            Glide.with(Tab05_MypurpleFragment.this).load(R.drawable.profile_image).into(ivProfile);
                         }
 
 

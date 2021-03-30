@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".joinActivity">
 
-    <TextView
-        android:id="@+id/tvJoin01"
-        android:layout_width="wrap_content"
+    <com.google.android.material.appbar.MaterialToolbar
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="MyPurple회원가입"
-        android:textSize="16dp"
-        android:textColor="@color/purple_500"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
-        android:padding="16dp"
-        android:layout_marginTop="16dp"/>
+        android:background="@color/purple_500"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="23sp"
+            android:layout_gravity="center"
+            android:fontFamily="@font/cookierunbold"
+            android:text="회원가입"/>
+    </com.google.android.material.appbar.MaterialToolbar>
     <EditText
-        android:layout_below="@+id/tvJoin01"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
         android:id="@+id/etJoinId"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+
         android:textSize="16sp"
         android:padding="8dp"
         android:background="@drawable/login_bg"
@@ -33,15 +38,15 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:text="중복확인"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etJoinId"/>
+        android:layout_gravity="center"
+       />
     <EditText
         android:layout_marginTop="16dp"
-        android:layout_below="@+id/etJoinId_Btn"
+        android:layout_gravity="center"
         android:id="@+id/etJoinPw"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
+
         android:textSize="16sp"
         android:padding="8dp"
         android:background="@drawable/login_bg"
@@ -49,11 +54,10 @@
         />
     <EditText
         android:layout_marginTop="4dp"
-        android:layout_below="@+id/etJoinPw"
+        android:layout_gravity="center"
         android:id="@+id/etJoinPw2"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:textSize="16sp"
         android:padding="8dp"
         android:background="@drawable/login_bg"
@@ -64,16 +68,15 @@
         android:layout_width="280dp"
         android:layout_height="wrap_content"
         android:text="비밀번호 확인"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etJoinPw2"/>
+
+        android:layout_gravity="center"/>
 
     <EditText
         android:layout_marginTop="16dp"
-        android:layout_below="@+id/etJoinPw_Btn"
+        android:layout_gravity="center"
         android:id="@+id/etNickName"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:textSize="16sp"
         android:padding="8dp"
         android:background="@drawable/login_bg"
@@ -81,13 +84,13 @@
         />
     <EditText
         android:layout_marginTop="8dp"
-        android:layout_below="@+id/etNickName"
+        android:layout_gravity="center"
         android:id="@+id/etMail"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:textSize="16sp"
         android:padding="8dp"
+
         android:background="@drawable/login_bg"
         android:hint="Email을 입력하세요"
         />
@@ -97,9 +100,9 @@
         android:id="@+id/join_Btn"
         android:layout_width="280dp"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:text="회원가입"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/etMail"/>
+      />
 
 
-</RelativeLayout>
+</LinearLayout>
